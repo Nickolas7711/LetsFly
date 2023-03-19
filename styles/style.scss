@@ -1,6 +1,7 @@
 *{
     margin: 0;
     padding: 0;
+    border: none;
     list-style-type: none;
     text-decoration: none;
     box-sizing: border-box;
@@ -26,106 +27,108 @@ $font-quic: 'Quicksand', sans-serif;
 
 }
 
-body{
-  width: 100%;
-  height: 100%;
-}
-.header{
+.header-bg{
   background-image: url("./img/derek-thomson-TWoL-QCZubY-unsplash 4.jpg");
   background-repeat:no-repeat;
-  background-size: cover; 
-
-  &__top{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    height: 5vw;
-    background: rgba($color-header, 0.85);
-
-    .logo{
-      @include font-face($font-roboto, 700, 32px, 32px);
+  background-position: 50% 50%;
+}
+.header{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  padding: 32px 0;
+  background: rgba($color-header, 0.85);
+  &__logo{
+    color: $color-white;
+  }
+  &__menu{
+    a{
       color: $color-white;
-    }
-  
-    &__menu{
-      display: flex;
-      align-items: center;
-      
-    }
-      ul{
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        gap: 2.92vw;
-
-      }
-        a{
-          @include font-face($font-lato, 500, 22px, 26px);
-          color: $color-white;
-        }
-        .lang-bar{
-          display: flex;
-          gap: .21vw;
-          
-        }
-      
-    
-    .social{
-      display: flex;
-      align-items: center;
-      gap: 1.98vw;
-
     }
   }
-  &__content{
-    display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      flex-wrap: wrap;
-      min-width: 100%;
-    }
-    &__content-inner{
+  &__social{
+    svg{fill: $color-white}
+  }
+}
+.lang-bar{
+  display: flex;
+  gap: .21vw;
+  
+}
+.social{
+  ul{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1.98vw;
+ }
+}
+.logo{
+  @include font-face($font-roboto, 700, 32px, 32px);
+}
+.menu{
+    ul{
       display: flex;
-      flex-direction: column;
+      flex-direction: row;
       align-items: center;
-      justify-content: space-around;
-      padding: 2.5vw;
-      gap: 2vw;
-      position: relative;
-      background: rgba($color-header, 0.85);
-      min-width: 80%;
-      margin: 10% 0 0 0;
+      gap: 2.92vw;
     }
-    &__content-title{
-      @include font-face($font-lora, 700, 84px, 100px);
-      text-align: center;
-      text-transform: uppercase;
-      color: $color-white;
+    a{
+      @include font-face($font-lato, 500, 22px, 26px);
       
     }
-    &__content-description{
-      @include font-face($font-lato, 400, 24px, 29px);
-      color: $color-white;
-    }
-  &__content-button{
+}
+.cta-conteiner{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  &__inner{
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    @include font-face($font-lato, 900, 16px, 19px);
+    justify-content: space-around;
+    padding: 1.5vw;
+    gap: 1vw;
+    background: rgba($color-header, 0.85);
+    margin-top: 9.42vw;
+  }
+  &__title{
+    @include font-face($font-lora, 700, 84px, 100px);
+    text-align: center;
     text-transform: uppercase;
+    color: $color-white;
+  }
+  &__description{
+    @include font-face($font-lato, 400, 24px, 29px);
+    color: $color-white;
+  }
+  &__button{
+    @include font-face($font-lato, 900, 16px, 19px);
     width: 18.94vw;
     height: 3.9vw;
-    color: $color-white;
-    background: $color-button;
   }
-  &__content-lainer{
-    position: relative;
-    margin: 1% 0 5% 0;
-    opacity: 0.85;
-    
-  }
+}
+.button{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase; 
+  color: $color-white;
+  background: $color-button;
+}
+.button--follow{
+  @include font-face($font-quic, 700, 20px, 18px);
+  width: 18.94vw;
+  height: 3.9vw;
+}
+.airplane{
+  position: relative;
+  opacity: 0.85;
+  margin-top: 72px;
+  margin-bottom: 115px;
 }
 .about{
   display: flex;
@@ -135,45 +138,189 @@ body{
   padding-bottom: 6.46vw;
   gap: 32px;
 
-  &__title{
-    @include font-face($font-roboto, 700, 56px, 74px);
-    text-transform: uppercase;
-    color: $color-text;
-  }
   &__description{
     @include font-face($font-quic, 500, 20px, 32px);
-    width: 1066px;
-    height: 96px;
+    max-width: 1066px;
     color: $color-text;
   }
 }
-.advatage-box{
+.title{
+  @include font-face($font-roboto, 700, 56px, 74px);
+  text-align: center;
+  text-transform: uppercase;
+  color: $color-text;
+}
+.title--white{
+  color: $color-white;
+}
+.advantage-box{
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   justify-content: space-around;
-  min-width: 1669px;
+  min-width: 100%;
+  margin-top: 32px;
 }
 .list-box{
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-rows: 33% 0% 1fr;
   align-items: center;
-
+  justify-items: center;
   &__number{
-    @include font-face($font-roboto, 700, 144px, 190px);
-    text-transform: uppercase;
-    margin-bottom: 4.9vw;
-    color: $color-adl;
-  }
-
-  &__img{
-    position: absolute;
-    margin-top: 4.9vw;
-
+  @include font-face($font-roboto, 700, 144px, 190px);
+  text-transform: uppercase;
+  color: $color-adl;
   }
   &__description{
     @include font-face($font-quic, 400, 40px, 32px);
+    text-align: center;
     color: $color-text;
   }
-}
   
+}
+.infoguide-bg{
+  background-image: url("./img/ken-cheung-VbLTNceBTFE-unsplash\ 1.jpg");
+  background-repeat:no-repeat;
+  background-position: 50% 50%;
+}
+.infoguide{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 52px 0;
+  gap: 5px;
+
+  &__country-name{
+    @include font-face($font-roboto, 700, 144px, 144px);
+    text-transform: uppercase;
+    color: $color-white;
+  }
+  &__date{
+    @include font-face($font-quic, 500, 24px, 18px);
+    color: $color-white;
+    max-height: 75%;
+    margin-bottom: 32px;
+  }
+  &__description{
+    @include font-face($font-quic, 400, 24px, 32px);
+    max-width: 1066px;
+    text-align: center;
+    p{color: $color-white;}
+  }
+  &__line{
+    margin-bottom: 40px;
+  }
+  &__discount{
+    display: flex;
+    @include font-face($font-quic, 500, 28px, 32px);
+    max-height: 114%;
+    text-transform: uppercase;
+    p{color: $color-white;}
+    margin-bottom: 24px;
+  }
+  &__button{
+    margin-bottom: 50px;
+  }
+  }
+  
+
+
+.baner{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 72px 0;
+    
+}
+.box{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+.box--indent{
+  flex-wrap: nowrap;
+  max-width: 1920px;
+  gap: 112px;
+  img{
+    max-width: 100%;
+    height: auto;
+  }
+} 
+
+.box-title{
+  position: relative;
+  @include font-face($font-roboto, 400, 18px, 18px);
+  text-transform: uppercase;
+  top: 35px;
+  span{
+  display: inline-flexbox;
+  background-color: rgba($color-header, 0.85);
+  color: $color-white;
+  padding: 5px 8px;
+  }
+}
+.title-insta{
+  @include font-face($font-quic, 500, 14px, 18px);
+  text-align: center;
+  padding: 8px 0;
+  
+}
+.media-photo__box{
+  padding: 50px 0;
+}
+
+.media-video__bg{
+  background-image: url("./img/background\ video.jpg");
+  background-repeat:no-repeat;
+  background-position: 50% 50%;
+}
+.media-video__title{
+  padding: 32px 0;
+}
+.play-button{
+  position: relative;
+  bottom: 9.91vw;
+  text-align: center;
+  
+}
+
+.media-video__item{
+    display: inline-block;
+  
+    img{
+    transition: 1s;
+    }
+    img:hover{
+    transform: scale(1.2);
+  }
+ 
+}
+
+.footer-bg{
+  background-image: url("./img/imgMountains.svg");
+background-repeat:no-repeat;
+background-size: cover; 
+}
+.footer{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  height: 12vw;
+  
+  &__logo{
+    color: $color-text;
+  }
+  &__menu{
+    a{
+      color: $color-text;
+    }
+  }
+  &__social{
+    svg{fill: $color-text}
+  }
+}
 
